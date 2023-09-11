@@ -195,7 +195,17 @@ export default function GnrBbsView() {
     const onMoveList = (event) => {
         event.preventDefault();
         // router.push('/boards/board-list');
-        router.push(`/bbs/gnr-bbs/gnr-bbs-list?areaSen=${areaSen}&bbsSen=${bbsSen}`, undefined, { shallow: true });
+        let url = "";
+        if ('A01001' === bbsInfo.bbsTyCd) {
+            url = "/bbs/gnr-bbs/gnr-bbs-list?";
+        } else if ('A01002' === bbsInfo.bbsTyCd) {
+            url = "/bbs/memo-bbs/memo-bbs-list?";
+        } else if ('A01003' === bbsInfo.bbsTyCd) {
+            url = "/bbs/gallary-bbs/gallary-bbs-list?";
+        } else if ('A01004' === bbsInfo.bbsTyCd) {
+            url = "/bbs/card-bbs/card-bbs-list?";
+        }
+        router.push(`${url}areaSen=${areaSen}&bbsSen=${bbsSen}`, undefined, { shallow: true });
     }
     
     const onMoveDetail = (event) => {
