@@ -72,7 +72,17 @@ export default function GnrBbsDetail() {
      const onSubmit = (data) => {
       // handle form submission logic here
       saveData(data).subscribe(() => {
-          router.push(`/bbs/gnr-bbs/gnr-bbs-list?areaSen=${areaSen}&bbsSen=${bbsSen}`)  // redirect to success page
+        let url = "";
+        if ('A01001' === bbsInfo.bbsTyCd) {
+            url = "/bbs/gnr-bbs/gnr-bbs-list?";
+        } else if ('A01002' === bbsInfo.bbsTyCd) {
+            url = "/bbs/memo-bbs/memo-bbs-list?";
+        } else if ('A01003' === bbsInfo.bbsTyCd) {
+            url = "/bbs/gallary-bbs/gallary-bbs-list?";
+        } else if ('A01004' === bbsInfo.bbsTyCd) {
+            url = "/bbs/card-bbs/card-bbs-list?";
+        }
+          router.push(`${url}areaSen=${areaSen}&bbsSen=${bbsSen}`)  // redirect to success page
       })
     }
 
