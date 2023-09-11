@@ -1,29 +1,4 @@
 import Layout from "@/components/layout";
-import Head from "next/head";
-import { useRouter } from "next/router";
-
-export default function GallaryBbsList() {
-    const router = useRouter();
-
-    const { areaSen, bbsSen } = router.query;
-
-    // 지역 정보 조회
-
-    // 게시판 정보 조회
-
-    // 게시판 목록 조회
-    
-    return (
-        <Layout>
-            <Head>
-                <title>
-                    대전우유 사진게시판
-                </title>
-            </Head>
-
-        </Layout>
-    )
-}import Layout from "@/components/layout";
 import { Menu, Switch, Transition } from "@headlessui/react";
 import { BookmarkIcon, BriefcaseIcon, CalendarIcon, ChatBubbleOvalLeftIcon, ChevronDownIcon, CurrencyDollarIcon, EyeIcon, HandThumbUpIcon, MapPinIcon, PencilIcon } from "@heroicons/react/24/outline";
 import Head from "next/head";
